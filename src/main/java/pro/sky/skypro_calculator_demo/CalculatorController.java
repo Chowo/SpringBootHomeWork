@@ -22,23 +22,38 @@ public class CalculatorController {
     }
 
     @RequestMapping(path = "/calculator/plus")
-    public int sum(@RequestParam("num1") int number1, @RequestParam("num2") int number2) {
-        return calculatorService.sum(number1, number2);
+    public String sum(@RequestParam(value = "num1", required = false) Integer number1, @RequestParam(value = "num2", required = false) Integer number2) {
+        if (number1 == null || number2 == null) {
+            return "Один или оба параметра не определены";
+        }
+        return number1 + " + " + number2 + " = " + calculatorService.sum(number1, number2);
     }
 
     @RequestMapping(path = "/calculator/minus")
-    public int subtraction(@RequestParam("num1") int number1, @RequestParam("num2") int number2) {
-        return calculatorService.subtraction(number1, number2);
+    public String subtraction(@RequestParam(value = "num1", required = false) Integer number1, @RequestParam(value = "num2", required = false) Integer number2) {
+        if (number1 == null || number2 == null) {
+            return "Один или оба параметра не определены";
+        }
+        return number1 + " - " + number2 + " = " + calculatorService.subtraction(number1, number2);
     }
 
     @RequestMapping(path = "/calculator/multiply")
-    public int multiply(@RequestParam("num1") int number1, @RequestParam("num2") int number2) {
-        return calculatorService.multiply(number1, number2);
+    public String multiply(@RequestParam(value = "num1", required = false) Integer number1, @RequestParam(value = "num2", required = false) Integer number2) {
+        if (number1 == null || number2 == null) {
+            return "Один или оба параметра не определены";
+        }
+        return number1 + " * " + number2 + " = " + calculatorService.multiply(number1, number2);
     }
 
     @RequestMapping(path = "/calculator/divide")
-    public int divide(@RequestParam("num1") int number1, @RequestParam("num2") int number2) {
-        return calculatorService.divide(number1, number2);
+    public String divide(@RequestParam(value = "num1", required = false) Integer number1, @RequestParam(value = "num2", required = false) Integer number2) {
+        if (number1 == null || number2 == null) {
+            return "Один или оба параметра не определены";
+        }
+        if (number2 == 0) {
+            return "Деление на ноль запрещено";
+        }
+        return number1 + " / " + number2 + " = " + calculatorService.divide(number1, number2);
     }
 
 }

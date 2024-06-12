@@ -3,11 +3,11 @@ package pro.sky.skypro_calculator_demo;
 public interface CalculatorServiceInterface {
     String hello();
 
-    int sum(int number1, int number2);
+    int sum(Integer number1, Integer number2);
 
-    int subtraction(int number1, int number2);
+    int subtraction(Integer number1, Integer number2);
 
-    int multiply(int number1, int number2);
+    int multiply(Integer number1, Integer number2);
 
-    int divide(int number1, int number2);
+    int divide(Integer number1, Integer number2);
 }
