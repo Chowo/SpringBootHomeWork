@@ -10,22 +10,19 @@ public class CalculatorService implements CalculatorServiceInterface {
     }
 
 
-    public int sum(Integer number1, Integer number2) {
+    public int sum(int number1, int number2) {
         return number1 + number2;
     }
 
-    public int subtraction(Integer number1, Integer number2) {
+    public int subtraction(int number1, int number2) {
         return number1 - number2;
     }
 
-    public int multiply(Integer number1, Integer number2) {
+    public int multiply(int number1, int number2) {
         return number1 * number2;
     }
 
-    public int divide(Integer number1, Integer number2) {
-        if (number2 == 0) {
-            throw new ArithmeticException("Деление на ноль запрещено");
-        }
+    public int divide(int number1, int number2) {
         return number1 / number2;
     }
 
